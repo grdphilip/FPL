@@ -12,10 +12,21 @@ nextGW <- fpl_get_gameweek_next()
 fpl_get_player_all()
 fpl_get_player_current(player_id = 3)
 
-for (player in players$second_name) {
-  if (player == "Salah")  {
-    print(player$id)
-  }
-}
- 
+playerwithID <- cbind.data.frame(players$id,players$second_name,players$team)
   
+
+#Function to search a player 
+  search_player <- function(name) {
+    for (j in 1:nrow(playerwithID)) {
+      for (i in 1:ncol(playerwithID$second_name)){
+        if (i == name) {
+          data[i[index], ]
+        }
+      }
+    }
+    return(NULL)
+    
+  }
+
+  search_player("Salah")
+
