@@ -15,18 +15,29 @@ fpl_get_player_current(player_id = 3)
 playerwithID <- cbind.data.frame(players$id,players$second_name,players$team)
   
 
-#Function to search a player 
+#Returns the data of a single player
   search_player <- function(name) {
-    for (j in 1:nrow(playerwithID)) {
-      for (i in 1:ncol(playerwithID$second_name)){
-        if (i == name) {
-          data[i[index], ]
-        }
-      }
-    }
-    return(NULL)
+    tempIndex = which(players$second_name == name)
+    #Transpose matrix 
+    return(View(t(players[tempIndex,])))
     
   }
+  
+  search_player("Mount")
+  
+  
+  which(players$second_name == "Saka")
 
-  search_player("Salah")
+  search_player("Salah","Saka")
 
+  #Get SALAH historic data
+  
+  View(fpl_get_player_detailed(player_id = 233))
+  
+  
+  
+  
+  
+  
+  
+  
